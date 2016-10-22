@@ -1,4 +1,7 @@
 target
+out
+*.jpg
+*.gif
 .idea
 *.iml
 *.ipr
