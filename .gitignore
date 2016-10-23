@@ -4,6 +4,7 @@ out
 *.gif
 .idea
 *.iml
+*.xml
 *.ipr
 *.iws
 *.ids
