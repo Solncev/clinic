@@ -20,9 +20,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Марат on 25.10.2016.
- */
+
+
 @WebServlet(name = "AccountServlet")
 public class AccountServlet extends HttpServlet {
     ClientService clientService = new ClientServiceImpl();
