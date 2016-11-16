@@ -21,7 +21,6 @@ import java.util.List;
 import java.util.Map;
 
 
-
 @WebServlet(name = "AccountServlet")
 public class AccountServlet extends HttpServlet {
     ClientService clientService = new ClientServiceImpl();

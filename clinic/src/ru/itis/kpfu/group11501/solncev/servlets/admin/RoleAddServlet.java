@@ -21,7 +21,7 @@ public class RoleAddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html; charset=UTF-8");
-        Role role= new Role(Long.parseLong(request.getParameter("id")), request.getParameter("role"));
+        Role role = new Role(Long.parseLong(request.getParameter("id")), request.getParameter("role"));
         roleService.addRole(role);
         response.sendRedirect("/admin");
     }

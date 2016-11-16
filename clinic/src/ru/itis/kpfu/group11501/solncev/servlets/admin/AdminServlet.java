@@ -68,7 +68,7 @@ public class AdminServlet extends HttpServlet {
             root.put("services", services);
             root.put("roles", roles);
             root.put("clients_roles", c_rs);
-            root.put("staffs",staffs);
+            root.put("staffs", staffs);
             new TemplateRender().render(request, response, tmpl, root);
         } else {
             response.sendRedirect("/adminlogin");

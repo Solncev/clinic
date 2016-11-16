@@ -1,4 +1,3 @@
-
 package ru.itis.kpfu.group11501.solncev.configs;
 
 import freemarker.template.Configuration;

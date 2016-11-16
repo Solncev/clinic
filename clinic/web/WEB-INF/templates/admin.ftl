@@ -671,12 +671,6 @@
 </table>
 
 
-
-
-
-
-
-
 <table border="1">
     <caption>должности</caption>
     <tr>
