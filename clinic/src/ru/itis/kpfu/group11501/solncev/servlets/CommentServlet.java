@@ -57,6 +57,9 @@ public class CommentServlet extends HttpServlet {
         List<Client> clients = clientService.getAllClients();
         root.put("comments", comments);
         root.put("clients", clients);
+        if (request.getSession().getAttribute("current_user") != null) {
+            root.put("islogin", "hghgh");
+        }
         new TemplateRender().render(request, response, tmpl, root);
     }
 }

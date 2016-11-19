@@ -38,6 +38,9 @@ public class EmployeeServlet extends HttpServlet {
         long id = Long.parseLong(request.getParameter("id"));
         Doctor doctor = doctorService.getDoctorById(id);
         root.put("doctor", doctor);
+        if (request.getSession().getAttribute("current_user") != null) {
+            root.put("islogin", "hghgh");
+        }
         new TemplateRender().render(request, response, tmpl, root);
     }
 }

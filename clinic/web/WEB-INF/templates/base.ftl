@@ -37,39 +37,42 @@
 
         </div>
         <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav menu1">
-                <li class="li1"><a href="/home">Клиника+</a></li>
-                <li class="li1"><a href="/newses">Новости</a></li>
-                <li class="dropdown li1"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Персонал<b
-                        class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/leaderships">Руководители</a></li>
-                        <li><a href="/specialists">Специалисты</a></li>
-                    </ul>
+        <ul class="nav navbar-nav menu1">
+            <li class="li1"><a href="/home">Клиника+</a></li>
+            <li class="li1"><a href="/newses">Новости</a></li>
+            <li class="dropdown li1"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Персонал<b
+                    class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/leaderships">Руководители</a></li>
+                    <li><a href="/specialists">Специалисты</a></li>
+                </ul>
 
-                <li class="dropdown li1"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Услуги<b
-                        class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li class="li1"><a href="/services">Услуги</a></li>
-                        <li class="li1"><a href="/deals">Предложения</a></li>
-                    </ul>
+            <li class="dropdown li1"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Услуги<b
+                    class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li class="li1"><a href="/services">Услуги</a></li>
+                    <li class="li1"><a href="/deals">Предложения</a></li>
+                </ul>
 
-                <#--<li class="li1"><a href="/services">Услуги</a></li>-->
-
-                <li class="right dropdown" id="login1"><a href="#" class="dropdown-toggle" data-toggle="dropdown">О
-                    нас<b
-                            class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/contacts">Контакты</a></li>
-                        <li><a href="/comments">Отзывы</a></li>
-                    </ul>
-                <li class="right dropdown" id="login1"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Вход<b
-                        class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/login">Вход</a></li>
-                        <li><a href="/registration">Регистрация</a></li>
-                    </ul>
+        <li class="right dropdown" id="login1"><a href="#" class="dropdown-toggle" data-toggle="dropdown">О
+            нас<b
+                    class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="/contacts">Контакты</a></li>
+                <li><a href="/comments">Отзывы</a></li>
             </ul>
+        <#if islogin ?has_content>
+            <li><a href="/personal_cabinet">Личный кабинет</a></li>
+            <li class="li1"><a href="/logout">Выйти</a></li>
+        <#else >
+            <li class="right dropdown" id="login1"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Вход<b
+                    class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/login">Вход</a></li>
+                    <li><a href="/personal_cabinet">Личный кабинет</a></li>
+                </ul>
+        </ul></#if>
+
         </div>
     </div>
 </div>

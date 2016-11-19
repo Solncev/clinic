@@ -27,4 +27,6 @@ public interface ClientRepository {
     void removeClientById(long id);
 
     boolean isAdmin(String login);
+
+    void addClientWithoutId(Client client1);
 }

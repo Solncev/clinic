@@ -52,6 +52,9 @@ public class AppointmentServlet extends HttpServlet {
         Map<String, Object> root = new HashMap<>();
         List<Appointment> appointments = appointmentService.getAllAppointments();
         root.put("appointments", appointments);
+        if (request.getSession().getAttribute("current_user") != null) {
+            root.put("islogin", "hghgh");
+        }
         new TemplateRender().render(request, response, tmpl, root);
     }
 }

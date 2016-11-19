@@ -37,6 +37,9 @@ public class ServiceServlet extends HttpServlet {
         long id = Long.parseLong(request.getParameter("id"));
         Service service = serviceService.getServiceById(id);
         root.put("service", service);
+        if (request.getSession().getAttribute("current_user") != null) {
+            root.put("islogin", "hghgh");
+        }
         new TemplateRender().render(request, response, tmpl, root);
     }
 }

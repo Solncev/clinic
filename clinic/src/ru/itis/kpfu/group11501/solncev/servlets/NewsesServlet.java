@@ -37,6 +37,9 @@ public class NewsesServlet extends HttpServlet {
         Map<String, Object> root = new HashMap<>();
         List<News> newses = newsService.getNews();
         root.put("newses", newses);
+        if (request.getSession().getAttribute("current_user") != null) {
+            root.put("islogin", "hghgh");
+        }
         new TemplateRender().render(request, response, tmpl, root);
     }
 }

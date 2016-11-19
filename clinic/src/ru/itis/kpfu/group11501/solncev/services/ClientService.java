@@ -23,4 +23,6 @@ public interface ClientService {
     void removeClientById(long id);
 
     boolean idAdmin(String login);
+
+    void addClientWithoutId(Client client1);
 }

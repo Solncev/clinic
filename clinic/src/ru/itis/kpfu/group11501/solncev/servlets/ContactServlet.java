@@ -37,6 +37,9 @@ public class ContactServlet extends HttpServlet {
         Map<String, Object> root = new HashMap<>();
         List<Contact> contacts = contactService.getContacts();
         root.put("contacts", contacts);
+        if (request.getSession().getAttribute("current_user") != null) {
+            root.put("islogin", "hghgh");
+        }
         new TemplateRender().render(request, response, tmpl, root);
     }
 }

@@ -43,6 +43,7 @@ public class AccountServlet extends HttpServlet {
             List<Appointment> appointments = appointmentService.getAppointmentsByClientId(clientService.getId(login));
             root.put("client", client);
             root.put("appointments", appointments);
+            root.put("islogin", login);
             new TemplateRender().render(request, response, tmpl, root);
         } else {
             response.sendRedirect("/login");

@@ -45,6 +45,30 @@ public class ClientRepositoryImpl implements ClientRepository {
         }
     }
 
+    public void addClientWithoutId(Client client1) {
+        PreparedStatement ps = null;
+        PreparedStatement ps1 = null;
+        try {
+            ps = connection.prepareStatement(
+                    "INSERT INTO clients(login, password, surname, firstname, patronymic, birthDay,gender, mobilenumber, OMSnumber) " +
+                            "VALUES (?, ?, ?, ?, ?, to_date(?, 'YYYY-MM-DD'), ?,?,?)"
+            );
+            ps.setString(1, client1.getLogin());
+            ps.setString(2, client1.getPassword());
+            ps.setString(3, client1.getSurname());
+            ps.setString(4, client1.getName());
+            ps.setString(5, client1.getPatronymic());
+            ps.setString(6, client1.getBirthDay());
+            ps.setString(7, client1.getGender());
+            ps.setString(8, client1.getMobile_number());
+            ps.setString(9, client1.getOMS_number());
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void removeClient(Client client) {
 

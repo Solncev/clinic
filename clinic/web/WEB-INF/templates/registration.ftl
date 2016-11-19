@@ -45,14 +45,14 @@
             <#else ><input type="text" class="form-control ntSaveForms" name="omsnumber" maxlength="30">
             </#if>
         </div>
-        <div class="form-group col-md-3">
-            <label>Пол* </label>
-            <#if gender?has_content><input type="text" class="form-control ntSaveForms" name="gender" value="${gender}"
-                                           maxlength="10">
-            <#else><input type="text" class="form-control ntSaveForms" name="gender" maxlength="10">
-            </#if>
-        </div>
 
+        <div class="form-group col-md-3">
+            Пол*
+            <select class="active" name="gender">
+                <option value="мужской">Мужской</option>
+                <option value="женский">Женский</option>
+            </select>
+        </div>
     </div>
     <div class="row block">
         <div class="form-group col-md-3">

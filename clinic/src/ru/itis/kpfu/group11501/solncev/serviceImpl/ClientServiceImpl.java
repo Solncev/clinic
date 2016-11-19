@@ -52,4 +52,9 @@ public class ClientServiceImpl implements ClientService {
     public boolean idAdmin(String login) {
         return clientRepository.isAdmin(login);
     }
+
+    @Override
+    public void addClientWithoutId(Client client1) {
+        clientRepository.addClientWithoutId(client1);
+    }
 }

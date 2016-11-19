@@ -5,8 +5,7 @@
 <#include "base.ftl">
 
 <#macro content>
-<a href='/logout'>Выйти</a>
-<br>
+
 <ul>
     <#if client?has_content>
         <#if client.login??> <h4>Ваш логин: ${client.login}</h4> <#else ><h4>Ваш логин: null</h4> </#if>
@@ -23,7 +22,7 @@
                 <h4>у вас имеется запись на: </h4>
                 <h4>${a.date}    ${a.time}<br></h4>
             </#list>
-        <#else > sobaka
+        <#else >
         </#if>
     <#else>
         null

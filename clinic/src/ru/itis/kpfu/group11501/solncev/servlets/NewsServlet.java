@@ -37,6 +37,9 @@ public class NewsServlet extends HttpServlet {
         long id = Long.parseLong(request.getParameter("id"));
         News news = newsService.getNewsById(id);
         root.put("news", news);
+        if (request.getSession().getAttribute("current_user") != null) {
+            root.put("islogin", "hghgh");
+        }
         new TemplateRender().render(request, response, tmpl, root);
     }
 }

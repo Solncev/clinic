@@ -40,6 +40,9 @@ public class LoginServlet extends HttpServlet {
         Map<String, Object> root = new HashMap<>();
         String err = request.getParameter("err");
         String login = request.getParameter("login");
+        if (request.getSession().getAttribute("current_user") != null) {
+            root.put("islogin", login);
+        }
         root.put("err", err);
         root.put("login", login);
         new TemplateRender().render(request, response, tmpl, root);

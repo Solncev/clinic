@@ -30,8 +30,7 @@ import java.util.regex.Pattern;
 public class RegistrationServlet extends HttpServlet {
     ClientService clientService = new ClientServiceImpl();
     Pattern name = Pattern.compile("^\\D+$");
-    Pattern mobile = Pattern.compile("^\\d+$");
-
+    Pattern mobile = Pattern.compile("^8\\d{10}$");
 
     protected static void doResponse(HttpServletRequest request, HttpServletResponse response, Client client, String message) throws IOException {
         request.setCharacterEncoding("utf-8");
@@ -73,7 +72,7 @@ public class RegistrationServlet extends HttpServlet {
 
                         } else {
                             if (client != null) {
-                                clientService.addClient(client);
+                                clientService.addClientWithoutId(client);
                                 if (clientService.getClientByUsername(request.getParameter("login")) != null) {
                                     request.getSession().setAttribute("current_user", null);
                                     Cookie cookie = new Cookie("login", request.getParameter("login"));
